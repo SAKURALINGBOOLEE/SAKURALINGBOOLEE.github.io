@@ -1,0 +1,70 @@
+<html>
+<body> 
+<head>
+<meta charset="utf-8" />
+<body style="background-color:#23238E;color:white;text-align:center;font-size:25px" onload="go()">
+<h1 align="center" style="color: #FFFFFF">
+<div style='font-size:40px;text-align:center;'><align="center" style="color: #FFFFF">黄金Hen1.1破解执行中...
+<br/>
+<br/>
+<div style='font-size:30px;text-align:center;'><align="center" style="color: #01DF3A">提示系统内存不足时，请点“OK”继续执行！超20次内存不足就重启PS4再试。
+<div style='font-size:30px;text-align:center;'><align="center" style="color: #01DF3A">如果弹出其他错误，或页面长久没反应，请立即按住手柄PS键，唤出电源重启PS4！！
+<div style='font-size:30px;text-align:center;'><align="center" style="color: #FFFFFF">（成功后，屏幕左上角有弹窗，请留意！此时可按手柄PS键离开浏览器！）
+<br>
+<script>
+if(document.cookie.indexOf('kex=0') >= 0)
+    window.location.href = 'index.html';
+</script>
+<script>
+function print(){}
+
+var scriptCode = '';
+
+function preloadScripts(lst)
+{
+    for(var i = 0; i < lst.length; i++)
+    {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', lst[i], false);
+        xhr.send('');
+        scriptCode += xhr.responseText + '\n';
+    }
+}
+
+function done()
+{
+    if(main_ret == 0 || main_ret == 179)
+    {
+        alert("破解成功!");
+        read_ptr_at(0);
+    }
+    else
+        alert("失败，请重启再试.");
+}
+
+window.midExploit = function()
+{
+    preloadScripts(['702.js', 'jb702/c-code.js', 'mira702/mira.js', 'goldhen.js', 'mira702/c-code.js'], go);
+}
+
+window.postExploit = function()
+{
+    document.cookie = 'kex=0';
+    setTimeout(function() //update the screen one last time...
+    {
+        eval.call(window, scriptCode);
+        done();
+    }, 100);
+};
+</script>
+<script src="utils.js"></script>
+<script src="int64.js"></script>
+<script src="ps4.js"></script>
+<button id="input1" onfocus="handle2()"></button>
+<button id="input2"></button>
+<button id="input3" onfocus="handle2()"></button>
+<select id="select1">
+<option value="value1">Value1</option>
+</select>
+</body>
+</html>
